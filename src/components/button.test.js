@@ -7,5 +7,7 @@ describe('<Button />', () => {
     it('Should call props.onClick when the button is clicked', () => {
         const wrapper = shallow(<Button />);
         wrapper.find('button').simulate('click');
+        expect(props.onClick.calledOnce).to.equal(true);
+        
     });
 });
