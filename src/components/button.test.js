@@ -5,9 +5,10 @@ import Button from './button';
 
 describe('<Button />', () => {
     it('Should call props.onClick when the button is clicked', () => {
-        const wrapper = shallow(<Button />);
+        const callback = jest.fn();
+        const wrapper = shallow(<Button onClick={callback} />);
         wrapper.find('button').simulate('click');
-        expect(props.onClick.calledOnce).to.equal(true);
-        
+        expect(callback).toHaveBeenCalled();
+
     });
 });
